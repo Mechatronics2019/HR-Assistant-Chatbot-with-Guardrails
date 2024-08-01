@@ -1,0 +1,39 @@
+define flow self check input
+  $allowed = execute self_check_input
+  if not $allowed
+    bot refuse to respond
+    stop
+
+define subflow self check output
+  $allowed = execute self_check_output
+  if not $allowed
+    bot refuse to respond
+    stop
+
+define user greeting
+  "Hi"
+  "Hello Devsloop"
+  "How are you"
+
+define bot greeting
+  "Hello, How may I assist you?"
+  "I'm great, How may I help you?"
+
+define flow greeting
+  user greeting
+  bot greeting
+
+define user ask Devsloop
+    "What do you know about Devsloop"
+    "How can i apply for an internship"
+    "What skills would i learn during the internship period?"
+    "How can i contact you?"
+    "What is policy on employee's self growth?"
+    "What is the total duration?"
+
+define flow Devsloop
+   user ...
+   $answer = execute rag()
+   bot $answer
+
+
