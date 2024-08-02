@@ -23,14 +23,6 @@ define flow greeting
   user greeting
   bot greeting
 
-define user ask Devsloop
-    "What do you know about Devsloop"
-    "How can i apply for an internship"
-    "What skills would i learn during the internship period?"
-    "How can i contact you?"
-    "What is policy on employee's self growth?"
-    "What is the total duration?"
-
 define flow Devsloop
    user ...
    $answer = execute rag()
